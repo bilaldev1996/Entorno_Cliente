@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numero = 0;
+        do{
+            numero = prompt("Introduce un numero...");//cuadro de dialogo para pedir numero al usuario
+            if(isNaN(numero)){
+                alert("Introduce un numero válido...");
+                //Alerta para indicarle al usuario que no es numero valido
+            }
+        }while(isNaN(numero)); //condicion para saber si es un numero o no
+    </script>
+</body>
+</html>

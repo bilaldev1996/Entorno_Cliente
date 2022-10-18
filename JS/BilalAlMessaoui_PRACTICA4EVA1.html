@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calcular Salario</title>
+    </head>
+    <style>
+        body {
+            background-color: aquamarine;
+            text-align: center;
+        }
+        .datos {
+            font-family: 'Courier New', Courier, monospace;
+            color: brown;
+            font-size: 15px;
+        }
+    </style>
+    <body>
+        <h1>Calcular Salario</h1>
+        <p class="datos"></p>
+        <script>
+            
+            let datos = document.querySelector('.datos');
+            let nombre = prompt('Introduce tu nombre').toLocaleUpperCase();
+            let apellidos = prompt('Introduce tus apellidos').toLocaleUpperCase();
+            let salario = Number(prompt('Introduce tu salario actual '));
+            let edad = prompt('Introduce tu edad') ;
+
+            function cadena(porcentaje) {
+                datos.innerHTML = (`El salario de ${nombre} ${apellidos} con la edad de ${edad} años es de : ${salario*(porcentaje/100)+salario} euros `);
+            }
+
+            console.log(salario)
+
+            switch (true) {
+                case salario > 2000:
+                    cadena(0);
+                    break;
+                case salario >=1000 && salario <=2000:
+                    if(edad > 45){
+                        cadena(3);
+                    }else if(edad<=45){
+                        cadena(10)
+                    }
+                    break;
+                case salario < 1000:
+                    if( edad < 30) {
+                        cadena(10)
+                    }else if(edad>=30 && edad<=45) {
+                        cadena(3);
+                    }else if(edad>45){
+                        cadena(15);
+                    }
+                    break;
+                default:
+                    console.log('No ha introducido los datos correctamente');
+                    break;
+            }
+
+            /* console.log(nombre, apellidos, salario, edad) ; */
+        </script>
+    </body>
+</html>

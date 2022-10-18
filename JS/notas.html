@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es-es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio08</title>
+  </head>
+  <body>
+    <script>
+      //     Usando un “array de arrays” o array bidimensional,
+      // vamos a crear una aplicación que pida 5 notas para tres
+      // alumnos. Funcionaría así:
+
+      // 1)	Nuestro array principal tendrá tres elementos de
+      // tipo array. Guardarán la información de los alumnos.
+      // 2)	Cada una de estas posiciones será un array de 6
+      // elementos.
+      // 3)	En la posición 0 guardaremos el nombre de cada
+      // alumno que será proporcionado por el usuario.
+      // 4)	Las posiciones de la 1 a la 5 guardarán las
+      // notas de cada alumno, también introducidas por el usuario.
+      // El programa pide notas en el formato “Introduce nota x para
+      // el alumno y:”
+      // 5)	Por último, usando el método document.write()
+      // mostrará en el documento web las 5 notas de cada alumno
+      // en formato:
+
+      var alumnado = []; //Creo el array inicial
+      for (let i = 0; i < 3; ++i) {
+        alumnado[i] = []; //Creo array secundario (habrá 3)
+        //A continuación, doy de alta un alumno con sus notas
+        for (let j = 0; j < 6; ++j) {
+          if (!j) alumnado[i][j] = prompt("Introduce nombre: ");
+          else
+            alumnado[i][j] = prompt(
+              `Introduce nota ${j} para el alumno ${alumnado[i][0]}`
+            );
+        }
+      }
+      //console.log(alumnado);
+      //LO SIGUIENTE NO ES NECESARIO
+      //Por último, recorro el array para darle un cierto formato de salida
+      for (let i = 0; i < alumnado.length; ++i) {
+        //console.log(alumnado[i]);
+        let cad = alumnado[i][0] + " --> "; //Almaceno el nombre
+        //y ahora, el resto de valores
+        for (let j = 1; j < alumnado[i].length; ++j) {
+          if (j < alumnado[i].length - 1) cad += alumnado[i][j] + ", ";
+          else cad += alumnado[i][j]; //Si es la última nota, no habrá coma
+        }
+        console.log(cad);
+        //console.log(`${cad}${alumnado[i][alumnado[i].length - 1]}`);
+        //Esta línea anterior es solo para no ver la última coma
+      }
+    </script>
+  </body>
+</html>
