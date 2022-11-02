@@ -88,6 +88,10 @@ function ponerNumeros(tablero) {
         for (let j = 0; j < columnas; j++) {
             if (tablero[i][j] != 'Mina') {
                 tablero[i][j] = nMinasPos(tablero, i, j);
+                /* Si alrededor no hay ninguna mina lo dejamos en blanco */
+                if(tablero[i][j]==0){
+                    tablero[i][j]='';
+                }
             }
         }
     }
