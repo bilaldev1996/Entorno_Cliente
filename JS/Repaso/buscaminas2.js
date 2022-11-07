@@ -1,9 +1,5 @@
 /*  Crear juego buscaminas   */
 
-/* Se pedirá al usuario el tamaño del tablero y las minas a colocar. La validación de
-datos consistirá en:
-o */
-
 let filas = parseInt(prompt('Introduce el número de filas'));
 let columnas = parseInt(prompt('Introduce el número de columnas'));
 let minas = parseInt(prompt('Introduce el número de minas'));
@@ -18,7 +14,11 @@ function validarDatos(filas, columnas, minas) {
     if (filas > 20 || columnas > 20) {
         return false;
     }
-    if (minas >= (filas * columnas) / 2) {
+    if (minas >= (filas * columnas) / 3 || minas >= (filas * columnas*2) / 3) {
+        return false;
+    }
+    /* si son numeros enteros */
+    if(!Number.isInteger(filas) || !Number.isInteger(columnas) || !Number.isInteger(minas)){
         return false;
     }
     return true;
