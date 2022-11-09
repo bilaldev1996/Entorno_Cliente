@@ -16,6 +16,7 @@ function getN_Filas(){
 }
 
 
+
 /* Funciton para pedir y validar columnas */
 
 function getN_Columnas(){
@@ -70,17 +71,17 @@ function colocaRelleno(tablero,filas,columnas) {
                 tablero[i][j] = nMinasPos(tablero, i, j,filas,columnas);
                 /* poner numeros de colores */
                 if (tablero[i][j] == 1) {
-                    tablero[i][j] = "<font color='blue' size='5'>" + tablero[i][j] + "</font>";
+                    tablero[i][j] = "<font color='blue' size='7'>" + tablero[i][j] + "</font>";
                 }else if (tablero[i][j] == 2) {
-                    tablero[i][j] = "<font color='green' size='5'>" + tablero[i][j] + "</font>";
+                    tablero[i][j] = "<font color='green' size='7'>" + tablero[i][j] + "</font>";
                 }else if (tablero[i][j] == 3) {
-                    tablero[i][j] = "<font color='red' size='5'>" + tablero[i][j] + "</font>";
+                    tablero[i][j] = "<font color='red' size='7'>" + tablero[i][j] + "</font>";
                 }else if (tablero[i][j] == 4) {
-                    tablero[i][j] = "<font color='purple' size='5'>" + tablero[i][j] + "</font>";
+                    tablero[i][j] = "<font color='purple' size='7'>" + tablero[i][j] + "</font>";
                 }else if (tablero[i][j] == 5) {
-                    tablero[i][j] = "<font color='orange' size='5'>" + tablero[i][j] + "</font>";
+                    tablero[i][j] = "<font color='orange' size='7'>" + tablero[i][j] + "</font>";
                 }else if (tablero[i][j] == 6) {
-                    tablero[i][j] = "<font color='black' size='5'>" + tablero[i][j] + "</font>";
+                    tablero[i][j] = "<font color='black' size='7'>" + tablero[i][j] + "</font>";
                 }
                 /* Si alrededor no hay ninguna mina lo dejamos en blanco */
                 if(tablero[i][j]==0){
