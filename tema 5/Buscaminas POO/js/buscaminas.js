@@ -66,7 +66,7 @@ class Buscaminas {
         getN_Minas(filas,columnas){
             let minas = parseInt(prompt('Introduce el número de minas'));
             while (minas < 2 || minas >= (filas * columnas) / 3 || minas >= (filas * columnas*2) / 3 || !Number.isInteger(minas)) {
-                alert('El número de minas debe ser mayor o igual a 1 y menor o igual a ' + filas * columnas + ' y entero');
+                alert('El número de minas debe ser mayor o igual a 2 y menor o igual a ' + filas * columnas + ' y entero');
                 minas = parseInt(prompt('Introduce el número de minas'));
             }
             return minas;
@@ -125,7 +125,6 @@ class Buscaminas {
         }
 
         colocaMinas(tablero,minas){
-            
             /* colocar minas */
             for (let i = 0; i < minas; i++) {
                 let fila = Math.floor(Math.random() * this.nFilas);
@@ -151,11 +150,10 @@ class Buscaminas {
             tabla += "</table>";
             document.write(tabla);
         }
-
         iniciar(){
             this.nFilas = this.getN_Filas();
             this.nColumnas = this.getN_Columnas();
-            this.minas = this.getN_Minas(this.nFilas,this.nColumnas);
+            this.nMinas = this.getN_Minas(this.nFilas,this.nColumnas);
             let tablero = this.crearTablero(this.nFilas,this.nColumnas);
             this.colocaMinas(tablero,this.minas);
             this.colocaRelleno(tablero);
